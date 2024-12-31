@@ -84,7 +84,7 @@ def send_shout(message):
     try:
         response = requests.patch(url, headers=HEADERS, json=payload)
         if response.status_code == 200:
-            print(Fore.GREEN + f"[SUCCESS] Shouted message: {message}")
+            print(Fore.GREEN + f"[SUCCESS] Shouted message.")
         elif response.status_code == 429:
             print(Fore.YELLOW + f"[WARNING] Rate limit hit. Retrying after cooldown...")
             time.sleep(RATELIMIT)
